@@ -1,4 +1,4 @@
-FROM mysql:lts-oracle
+FROM mysql:5.7
 
 ENV MYSQL_ROOT_PASSWORD="devopspassword"
 ENV MYSQL_DATABASE="accounts"
