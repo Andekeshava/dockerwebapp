@@ -1,8 +1,16 @@
 FROM tomcat:9.0.89-jdk17-temurin-jammy
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+# Copy WAR from Docker build context root
+COPY ROOT.war /usr/local/tomcat/webapps/ROOT.war
 
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
+//FROM tomcat:9.0.89-jdk17-temurin-jammy
+//RUN rm -rf /usr/local/tomcat/webapps/*
+
+//COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+
+//EXPOSE 8080
+//CMD ["catalina.sh", "run"]
 
