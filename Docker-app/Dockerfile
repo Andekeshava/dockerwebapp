@@ -1,4 +1,4 @@
-FROM tomcat:9-jdk8-corretto
+FROM tomcat:9.0-jdk8-temurin-alpine
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
