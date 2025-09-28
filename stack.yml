@@ -1,0 +1,23 @@
+---
+version: "3.8"
+
+services:
+  devopsdb:
+    image: dbimage
+    ports:
+      - "3306:3306"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+
+  application:
+    image: appimage
+    ports:
+      - "1234:8080"
+    depends_on:
+      - devopsdb
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
