@@ -1,4 +1,4 @@
-FROM tomcat:9.0.89-jdk17-temurin-jammy
+FROM tomcat:jdk17-temurin-noble
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy WAR from target directory built by Maven
